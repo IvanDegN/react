@@ -1,0 +1,17 @@
+.content
+{
+    grid-area: c;
+    background-color: aqua;
+}
+
+.image_full
+{
+    width: 1000px;
+    height: 100px;
+}
+
+.bcg-wrapper
+{
+    width: 470px;
+    height: 20px;
+}

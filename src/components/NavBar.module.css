@@ -1,0 +1,31 @@
+.nav
+{
+    grid-area: n;
+    background-color: green;
+}
+
+.link
+{
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover
+{
+    color: #85e9ff;
+}
+
+.link.active
+{
+    color: white;
+}
+
+
+.item
+{
+    color: black;
+}
+.item.active
+{
+    color: deepskyblue;
+}
