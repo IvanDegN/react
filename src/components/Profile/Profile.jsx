@@ -1,5 +1,6 @@
 import './Profile.module.css';
 import ProfileModuleCss from './Profile.module.css';
+import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () =>
 {
@@ -11,20 +12,8 @@ const Profile = () =>
             <div className='avatar'>
                 ava
             </div>
-            <div className='Posts'>
-                My posts
-                <div className='New__post'>
-                    New post
-                </div>
-                <div className='Posts__wrapper'>
-                    <div className='Post__item'>
-                        post 1
-                    </div>
-                    <div className='Post__item'>
-                        post 2
-                    </div>
-                </div>
-            </div>
+            <MyPosts />
+
         </div>
     );
 }

@@ -1,0 +1,12 @@
+.Post__item img
+{
+    width: 140px;
+    border-radius: 40px;
+}
+
+.text
+{
+    display: inline-block;
+    vertical-align: top;
+}
+
