@@ -1,6 +1,6 @@
 .Posts
 {
-
+    margin-top: 10px;
 }
 
 .New__post
@@ -8,9 +8,9 @@
 
 }
 
-.Posts__wrapper
+.PostsWrapper
 {
-
+    padding: 10px;
 }
 
 .Post__item

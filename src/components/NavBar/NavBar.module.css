@@ -2,6 +2,7 @@
 {
     grid-area: n;
     background-color: green;
+    padding: 20px;
 }
 
 .link
@@ -12,7 +13,7 @@
 
 .link:hover
 {
-    color: #85e9ff;
+    color: #808080;
 }
 
 .link.active
@@ -25,7 +26,9 @@
 {
     color: black;
 }
-.item.active
+
+.active
 {
-    color: deepskyblue;
+    color: #FFFDD0;
+    text-decoration: none;
 }
