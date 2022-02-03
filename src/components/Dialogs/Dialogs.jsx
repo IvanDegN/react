@@ -1,5 +1,5 @@
 import DialogsModulesCss from './Dialogs.module.css'
-import {BrowserRouter, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const Dialog = (props) =>
 {
@@ -20,34 +20,30 @@ const Message = (props) =>
 }
 
 
-const Dialogs = (props) =>
+const Dialogs = () =>
 {
 
-    let DataUsers =
+    let Users =
         [
                 {name: 'Ivan', id: 1},
                 {name: 'Nikolay', id: 2}
         ]
-    let DataMessages =
+    let Messages =
         [
             {text: 'Hi', id:1},
-            {text: 'Hi', id:2},
-            {text: 'Hi', id:3},
-            {text: 'Hi', id:4}
+            {text: 'Hi', id:2}
         ]
+    let dialogElements = Users.map( (dialog, key) => <Dialog key={key} name={dialog.name} id={dialog.id}/> )
+    let messageElements = Messages.map((message, key) => <Message key={key} text={message.text} id={message.id}/>)
 
     return (
 
             <div className={DialogsModulesCss.dialogs}>
                 <div className={DialogsModulesCss.dialogsItem}>
-                    <Dialog name={DataUsers[0].name} id={DataUsers[0].id}/>
-                    <Dialog name={DataUsers[1].name} id={DataUsers[1].id}/>
+                    {dialogElements}
                 </div>
                 <div className={DialogsModulesCss.messages}>
-                    <Message text={DataMessages[0].text} id={DataMessages[0].id}/>
-                    <Message text={DataMessages[0].text} id={DataMessages[1].id}/>
-                    <Message text={DataMessages[0].text} id={DataMessages[2].id}/>
-                    <Message text={DataMessages[0].text} id={DataMessages[3].id}/>
+                    {messageElements}
                 </div>
             </div>
 

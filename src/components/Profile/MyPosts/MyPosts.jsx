@@ -9,6 +9,7 @@ const MyPosts = () =>
             {id: 1, text: 'Hi', likes: 20},
             {id: 2, text: 'Where are you from?', likes: 15}
         ]
+    let posts = PostsData.map((post,key) => <Post key={key} text={post.text} likes = {post.likes}  />)
 
     return (
         <div className={MyPostsModuleCss.PostsWrapper}>
@@ -25,8 +26,7 @@ const MyPosts = () =>
                 New post
             </div>
             <div className={MyPostsModuleCss.Posts}>
-                <Post text={PostsData[0].text} likes = {PostsData[0].likes}  />
-                <Post text={PostsData[1].text}  likes = {PostsData[1].likes} />
+                {posts}
             </div>
 
         </div>
