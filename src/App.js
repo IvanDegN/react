@@ -13,9 +13,10 @@ import DialogItem from "./components/Dialogs/DialogItem/DialogItem";
 import Message from "./components/Dialogs/Message/Message";
 
 
+
 const App = (props) =>
 {
-    let posts = props.post.map((post,key) => <Post key={key} text={post.text} likes = {post.likes}  />)
+    let posts = props.posts.map((post,key) => <Post key={key} text={post.text} likes = {post.likes}  />)
     let dialogElements = props.users.map( (dialog, key) => <DialogItem key={key} name={dialog.name} id={dialog.id}/> )
     let messageElements = props.messages.map((message, key) => <Message key={key} text={message.text} id={message.id}/>)
 
