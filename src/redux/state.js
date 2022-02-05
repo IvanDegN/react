@@ -1,4 +1,4 @@
-
+import {Rerender} from "../render";
 
 
 let state =
@@ -36,5 +36,16 @@ let state =
 
 
 
+
     }
+
+    export const AddPost = (postMessage) =>
+    {
+
+        let NewPost = {id: 5, text: postMessage, likes: 0}
+        state.profilePage.posts.push(NewPost);
+        Rerender(state);
+    };
+
+
     export default state;
