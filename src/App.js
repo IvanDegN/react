@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -23,7 +23,6 @@ const App = (props) =>
     let friends = props.friends.map((friends, key) => <FriendItem key={key} name={friends.name} id={friends.id}/>)
 
   return (
-      <BrowserRouter>
           <div className='app-wrapper'>
               <Header />
               <NavBar  friends={friends}/>
@@ -37,7 +36,6 @@ const App = (props) =>
                   </Routes>
               </div>
           </div>
-      </BrowserRouter>
   );
 }
 

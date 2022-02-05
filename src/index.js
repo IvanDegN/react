@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import state from "./redux/state";
+import {BrowserRouter} from "react-router-dom";
 
 
 
@@ -12,12 +13,13 @@ import state from "./redux/state";
 ReactDOM.render(
 
   <React.StrictMode>
+      <BrowserRouter>
     <App users={state.messagesPage.users}
          messages={state.messagesPage.messages}
          posts={state.profilePage.posts}
          friends={state.SideBar.names}
-
     />
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
