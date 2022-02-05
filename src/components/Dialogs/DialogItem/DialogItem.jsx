@@ -6,7 +6,8 @@ const DialogItem = (props) =>
     let path = '/messages/' + props.id;
     return (
         <div className={DialogsModulesCss.item}>
-            <NavLink to={path}>{props.name}</NavLink>
+            <img alt='avatar' src='https://cspromogame.ru//storage/upload_images/avatars/4081.jpg' align='left' className={DialogsModulesCss.messageAva}/>
+            <div><NavLink to={path}>{props.name}</NavLink></div>
         </div>
     );
 

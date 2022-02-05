@@ -11,6 +11,7 @@ import Settings from "./components/Settings/Settings";
 import Post from "./components/Profile/MyPosts/Post/Post";
 import DialogItem from "./components/Dialogs/DialogItem/DialogItem";
 import Message from "./components/Dialogs/Message/Message";
+import FriendItem from "./components/NavBar/Friend/FriendItem/FriendItem";
 
 
 
@@ -19,12 +20,13 @@ const App = (props) =>
     let posts = props.posts.map((post,key) => <Post key={key} text={post.text} likes = {post.likes}  />)
     let dialogElements = props.users.map( (dialog, key) => <DialogItem key={key} name={dialog.name} id={dialog.id}/> )
     let messageElements = props.messages.map((message, key) => <Message key={key} text={message.text} id={message.id}/>)
+    let friends = props.friends.map((friends, key) => <FriendItem key={key} name={friends.name} id={friends.id}/>)
 
   return (
       <BrowserRouter>
           <div className='app-wrapper'>
               <Header />
-              <NavBar />
+              <NavBar  friends={friends}/>
               <div className='app-wrapper-content'>
                   <Routes>
                       <Route path='/messages/' element={<Dialogs  dialogs={dialogElements} messages={messageElements} />}/>

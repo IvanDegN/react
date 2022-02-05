@@ -8,11 +8,15 @@ import state from "./redux/state";
 
 
 
+
 ReactDOM.render(
+
   <React.StrictMode>
     <App users={state.messagesPage.users}
          messages={state.messagesPage.messages}
          posts={state.profilePage.posts}
+         friends={state.SideBar.names}
+
     />
   </React.StrictMode>,
   document.getElementById('root')

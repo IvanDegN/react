@@ -32,3 +32,14 @@
     color: #FFFDD0;
     text-decoration: none;
 }
+
+.friendWrapper
+{
+    display: flex;
+}
+
+.FriendTitle
+{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
