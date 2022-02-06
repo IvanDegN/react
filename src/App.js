@@ -30,8 +30,8 @@ const App = (props) =>
               <NavBar  friends={friends}/>
               <div className='app-wrapper-content'>
                   <Routes>
-                      <Route path='/messages/*' element={<Dialogs  dialogs={dialogElements} messages={messageElements} newMessageText={props.newMessageText} AddMessage={props.AddMessage} UpdateNewMessageText={props.UpdateNewMessageText} />}/>
-                      <Route path='/profile' element={<Profile posts={posts} AddPost={props.AddPost} newPostText={props.newPostText} UpdateNewPostText={props.UpdateNewPostText} />}/>
+                      <Route path='/messages/*' element={<Dialogs  dialogs={dialogElements} messages={messageElements} newMessageText={props.newMessageText} dispatch={props.dispatch}  />}/>
+                      <Route path='/profile' element={<Profile posts={posts} dispatch={props.dispatch} newPostText={props.newPostText}  />}/>
                       <Route path='/news' element={<News />}/>
                       <Route path='/music' element={<Music />}/>
                       <Route path='/settings' element={<Settings />}/>

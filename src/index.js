@@ -18,12 +18,12 @@ import store from "./redux/state";
                      messages={state.messagesPage.messages}
                      posts={state.profilePage.posts}
                      friends={state.SideBar.names}
-                     AddPost={store.AddPost.bind(store)}
+                     dispatch={store.dispatch.bind(store)}
                      newPostText={state.profilePage.newPostText}
-                     UpdateNewPostText={store.UpdateNewPostText.bind(store)}
+                     /*UpdateNewPostText={store.dispatch.bind(store)}*/
                      newMessageText={state.messagesPage.newMessageText}
-                     AddMessage={store.AddMessage.bind(store)}
-                     UpdateNewMessageText={store.UpdateNewMessageText.bind(store)}
+                     /*AddMessage={store.dispatch.bind(store)}
+                     UpdateNewMessageText={store.dispatch.bind(store)}*/
                 />
             </BrowserRouter>
         </React.StrictMode>,
