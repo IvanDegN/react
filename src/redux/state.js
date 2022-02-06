@@ -6,12 +6,13 @@ let state =
         profilePage:
             {
                 posts:[{id: 1, text: 'Hi', likes: 20},{id: 2, text: 'Where are you from?', likes: 15}],
-                newPostText: 'Redux'
+                newPostText: ''
             },
         messagesPage:
             {
                 users:[{name: 'Ivan', id: 1},{name: 'Nikolay', id: 2}],
-                messages:[{text: 'Hi', id:1},{text: 'Hi', id:2}]
+                messages:[{text: 'Hi', id:1},{text: 'Hi', id:2}],
+                newMessageText: ''
             },
         SideBar:
             {
@@ -19,7 +20,20 @@ let state =
             }
     }
 
-window.state = state;
+    export const AddMessage = () =>
+    {
+        let NewMessage = {text: state.messagesPage.newMessageText, id:3}
+        state.messagesPage.messages.push(NewMessage);
+        state.messagesPage.newMessageText = '';
+        Rerender(state);
+    }
+
+    export const UpdateNewMessageText = (newMessage) =>
+    {
+        state.messagesPage.newMessageText = newMessage;
+        Rerender(state);
+    }
+
     export const AddPost = () =>
     {
 

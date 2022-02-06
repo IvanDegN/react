@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
-import {AddPost, UpdateNewPostText} from "./redux/state";
+import {AddMessage, AddPost, UpdateNewMessageText, UpdateNewPostText} from "./redux/state";
 
 
 export const Rerender = (state) =>
@@ -18,6 +18,9 @@ export const Rerender = (state) =>
                      AddPost={AddPost}
                      newPostText={state.profilePage.newPostText}
                      UpdateNewPostText={UpdateNewPostText}
+                     newMessageText={state.messagesPage.newMessageText}
+                     AddMessage={AddMessage}
+                     UpdateNewMessageText={UpdateNewMessageText}
                 />
             </BrowserRouter>
         </React.StrictMode>,
