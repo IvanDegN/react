@@ -1,23 +1,31 @@
 import MyPostsModuleCss from './MyPosts.module.css';
 import React from "react";
 
+
 const MyPosts = (props) =>
 {
 
+    const post = React.createRef();
+
     const AddPost = () =>
     {
-        let text = post.current.value;
-        props.AddPost(text)
-        props.current.value = '';
+        props.AddPost();
     }
-    const post = React.createRef();
+
+    const UpdateNewPostText = () =>
+    {
+        let text = post.current.value;
+        props.UpdateNewPostText(text);
+    }
+
+
 
     return (
         <div className={MyPostsModuleCss.PostsWrapper}>
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea ref={post}></textarea>
+                    <textarea onChange={UpdateNewPostText} ref={post} value={props.newPostText}/>
                 </div>
                 <div>
                     <button  onClick={ AddPost }>Add post</button>

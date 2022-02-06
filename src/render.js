@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
-import {AddPost} from "./redux/state";
+import {AddPost, UpdateNewPostText} from "./redux/state";
 
 
 export const Rerender = (state) =>
@@ -16,6 +16,8 @@ export const Rerender = (state) =>
                      posts={state.profilePage.posts}
                      friends={state.SideBar.names}
                      AddPost={AddPost}
+                     newPostText={state.profilePage.newPostText}
+                     UpdateNewPostText={UpdateNewPostText}
                 />
             </BrowserRouter>
         </React.StrictMode>,

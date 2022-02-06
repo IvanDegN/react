@@ -12,7 +12,7 @@ const Dialogs = (props) =>
                 </div>
                 <div className={DialogsModulesCss.messages}>
                     {props.messages}
-                    <textarea ref={NewMessage}></textarea>
+                    <textarea ref={NewMessage}/>
                     <div><button onClick={AddMessage}>Add message</button></div>
 
                 </div>

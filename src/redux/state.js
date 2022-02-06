@@ -5,47 +5,35 @@ let state =
     {
         profilePage:
             {
-                posts:
-                    [
-                    {id: 1, text: 'Hi', likes: 20},
-                    {id: 2, text: 'Where are you from?', likes: 15}
-                    ]
+                posts:[{id: 1, text: 'Hi', likes: 20},{id: 2, text: 'Where are you from?', likes: 15}],
+                newPostText: 'Redux'
             },
-            messagesPage:
+        messagesPage:
             {
-                users:
-                    [
-                    {name: 'Ivan', id: 1},
-                    {name: 'Nikolay', id: 2}
-                    ],
-                messages:
-                [
-                    {text: 'Hi', id:1},
-                    {text: 'Hi', id:2}
-                ]
+                users:[{name: 'Ivan', id: 1},{name: 'Nikolay', id: 2}],
+                messages:[{text: 'Hi', id:1},{text: 'Hi', id:2}]
             },
-                SideBar:
+        SideBar:
             {
-            names:
-                [
-                    {name: 'Ivan', id:1},
-                    {name: 'Nikolay', id:2},
-                    {name: 'Elena', id:3}
-                ]
-        }
-
-
-
-
+                names:[{name: 'Ivan', id:1},{name: 'Nikolay', id:2},{name: 'Elena', id:3}]
+            }
     }
 
-    export const AddPost = (postMessage) =>
+window.state = state;
+    export const AddPost = () =>
     {
 
-        let NewPost = {id: 5, text: postMessage, likes: 0}
+        let NewPost = {id: 5, text: state.profilePage.newPostText, likes: 0}
         state.profilePage.posts.push(NewPost);
+        state.profilePage.newPostText = '';
         Rerender(state);
     };
+
+   export const UpdateNewPostText = (newText) =>
+    {
+        state.profilePage.newPostText = newText;
+        Rerender(state);
+    }
 
 
     export default state;
