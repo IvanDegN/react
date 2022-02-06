@@ -1,4 +1,9 @@
-import {Rerender} from "../render";
+
+    let Rerender = () =>
+    {
+        console.log('state changed!');
+    }
+
 
 
 let state =
@@ -49,5 +54,9 @@ let state =
         Rerender(state);
     }
 
+    export const subscribe = (observer) =>
+    {
+        Rerender = observer;
+    }
 
     export default state;
