@@ -1,10 +1,11 @@
 
-import state, {subscribe} from "./redux/state";
+
 import ReactDOM from "react-dom";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
-import {AddMessage, AddPost, UpdateNewMessageText, UpdateNewPostText} from "./redux/state";
+
+import store from "./redux/state";
 
 
  const Rerender = (state) =>
@@ -17,17 +18,17 @@ import {AddMessage, AddPost, UpdateNewMessageText, UpdateNewPostText} from "./re
                      messages={state.messagesPage.messages}
                      posts={state.profilePage.posts}
                      friends={state.SideBar.names}
-                     AddPost={AddPost}
+                     AddPost={store.AddPost.bind(store)}
                      newPostText={state.profilePage.newPostText}
-                     UpdateNewPostText={UpdateNewPostText}
+                     UpdateNewPostText={store.UpdateNewPostText.bind(store)}
                      newMessageText={state.messagesPage.newMessageText}
-                     AddMessage={AddMessage}
-                     UpdateNewMessageText={UpdateNewMessageText}
+                     AddMessage={store.AddMessage.bind(store)}
+                     UpdateNewMessageText={store.UpdateNewMessageText.bind(store)}
                 />
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
-Rerender(state);
-subscribe(Rerender);
+Rerender(store.getState());
+store.subscribe(Rerender);
