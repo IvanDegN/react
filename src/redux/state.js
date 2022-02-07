@@ -1,4 +1,7 @@
-
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 let store =
         {
@@ -33,24 +36,24 @@ let store =
 
             dispatch(action)
             {
-                if(action.type === 'ADD-POST')
+                if(action.type === ADD_POST)
                 {
                     let NewPost = {id: 5, text: this._state.profilePage.newPostText, likes: 0}
                     this._state.profilePage.posts.push(NewPost);
                     this._state.profilePage.newPostText = '';
                     this._callSubscriber(this._state);
                 }
-                else if(action.type === 'UPDATE-NEW-POST-TEXT')
+                else if(action.type === UPDATE_NEW_POST_TEXT)
                 {
                     this._state.profilePage.newPostText = action.newText;
                     this._callSubscriber(this._state);
                 }
-                else if(action.type === 'UPDATE-NEW-MESSAGE-TEXT')
+                else if(action.type === UPDATE_NEW_MESSAGE_TEXT)
                 {
                     this._state.messagesPage.newMessageText = action.newMessage;
                     this._callSubscriber(this._state);
                 }
-                else if(action.type === 'ADD-MESSAGE')
+                else if(action.type === ADD_MESSAGE)
                 {
                     let NewMessage = {text: this._state.messagesPage.newMessageText, id:3}
                     this._state.messagesPage.messages.push(NewMessage);
@@ -59,6 +62,14 @@ let store =
                 }
             }
         }
+
+export const addPostActionCreator = () => ({type: ADD_POST})
+
+export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
+
+export const AddMessageActionCreator = () => ({type: ADD_MESSAGE})
+
+export const ChangeMessageActionCreator = (message) => ({type: UPDATE_NEW_MESSAGE_TEXT, newMessage: message})
 
     export default store;
     window.state = store;
