@@ -20,10 +20,7 @@ import store from "./redux/state";
                      friends={state.SideBar.names}
                      dispatch={store.dispatch.bind(store)}
                      newPostText={state.profilePage.newPostText}
-                     /*UpdateNewPostText={store.dispatch.bind(store)}*/
                      newMessageText={state.messagesPage.newMessageText}
-                     /*AddMessage={store.dispatch.bind(store)}
-                     UpdateNewMessageText={store.dispatch.bind(store)}*/
                 />
             </BrowserRouter>
         </React.StrictMode>,
