@@ -5,11 +5,12 @@ import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
 
-import store from "./redux/store";
+import store from "./redux/redux-store";
 
 
  const Rerender = (state) =>
 {
+
     ReactDOM.render(
 
         <React.StrictMode>
@@ -28,4 +29,8 @@ import store from "./redux/store";
     );
 }
 Rerender(store.getState());
-store.subscribe(Rerender);
+store.subscribe(() =>
+{
+    let state = store.getState();
+    Rerender(state);
+});
