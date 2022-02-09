@@ -21,16 +21,16 @@ const App = (props) =>
 
 
 
-    let friends = props.friends.map((friends, key) => <FriendItem key={key} name={friends.name} id={friends.id}/>)
+    //let friends = props.friends.map((friends, key) => <FriendItem key={key} name={friends.name} id={friends.id}/>)
 
   return (
           <div className='app-wrapper'>
               <Header />
-              <NavBar  friends={friends}/>
+              <NavBar  />
               <div className='app-wrapper-content'>
                   <Routes>
-                      <Route path='/messages/*' element={<DialogsContainer store={props.store}     />}/>
-                      <Route path='/profile' element={<Profile store={props.store}  />}/>
+                      <Route path='/messages/*' element={<DialogsContainer/>}/>
+                      <Route path='/profile' element={<Profile/>}/>
                       <Route path='/news' element={<News />}/>
                       <Route path='/music' element={<Music />}/>
                       <Route path='/settings' element={<Settings />}/>

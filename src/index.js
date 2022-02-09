@@ -5,6 +5,7 @@ import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
 import store from "./redux/redux-store";
+import StoreContext, {Provider} from "./StoreContext";
 
 
 
@@ -15,17 +16,9 @@ import store from "./redux/redux-store";
 
         <React.StrictMode>
             <BrowserRouter>
-                <App users={state.messagesPage.users}
-                     messages={state.messagesPage.messages}
-                     posts={state.profilePage.posts}
-                     friends={state.SideBar.names}
-                     dispatch={store.dispatch.bind(store)}
-                     newPostText={state.profilePage.newPostText}
-                     newMessageText={state.messagesPage.newMessageText}
-                     store={store}
-                     state={state}
-
-                />
+                <Provider store={store}>
+                <App/>
+                    </Provider>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
