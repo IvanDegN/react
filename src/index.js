@@ -4,8 +4,8 @@ import ReactDOM from "react-dom";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
-
 import store from "./redux/redux-store";
+
 
 
  const Rerender = (state) =>
@@ -22,6 +22,9 @@ import store from "./redux/redux-store";
                      dispatch={store.dispatch.bind(store)}
                      newPostText={state.profilePage.newPostText}
                      newMessageText={state.messagesPage.newMessageText}
+                     store={store}
+                     state={state}
+
                 />
             </BrowserRouter>
         </React.StrictMode>,

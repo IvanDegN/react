@@ -1,6 +1,6 @@
 import MyPostsModuleCss from './MyPosts.module.css';
 import React from "react";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
+import Post from "./Post/Post";
 
 
 
@@ -8,18 +8,22 @@ import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../red
 const MyPosts = (props) =>
 {
 
+
+    let posts = props.posts.map((post,key) => <Post  key={key} text={post.text} likes = {post.likes}  posts={props.posts} newPostText={props.newPostText} />)
+    let NewPost = props.newPostText
+
     const post = React.createRef();
 
-    const AddPost = () =>
+    const addPost = () =>
     {
-
-        props.dispatch(addPostActionCreator());
+        props.addPost();
     }
 
-    const UpdateNewPostText = () =>
+    const updateNewPostText = () =>
     {
         let text = post.current.value;
-        props.dispatch(updateNewPostTextActionCreator(text));
+        props.updateNewPostText(text);
+
     }
 
 
@@ -29,17 +33,17 @@ const MyPosts = (props) =>
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea onChange={UpdateNewPostText} ref={post} value={props.newPostText} placeholder='post something...'/>
+                    <textarea onChange={updateNewPostText} ref={post} value={NewPost} placeholder='post something...'/>
                 </div>
                 <div>
-                    <button  onClick={ AddPost }>Add post</button>
+                    <button  onClick={ addPost }>Add post</button>
                 </div>
             </div>
             <div className='New__post'>
                 New post
             </div>
             <div className={MyPostsModuleCss.Posts}>
-                {props.posts}
+                {posts}
             </div>
         </div>
     );
