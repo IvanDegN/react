@@ -5,12 +5,8 @@ import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
 import store from "./redux/redux-store";
-import StoreContext, {Provider} from "./StoreContext";
+import {Provider} from 'react-redux'
 
-
-
- const Rerender = (state) =>
-{
 
     ReactDOM.render(
 
@@ -23,10 +19,5 @@ import StoreContext, {Provider} from "./StoreContext";
         </React.StrictMode>,
         document.getElementById('root')
     );
-}
-Rerender(store.getState());
-store.subscribe(() =>
-{
-    let state = store.getState();
-    Rerender(state);
-});
+
+
