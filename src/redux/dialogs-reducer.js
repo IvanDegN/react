@@ -29,7 +29,7 @@ const DialogsReducer = (state = initialState, action) =>
         default: return  state;
     }
 
-    
+
 }
 
 export const AddMessageActionCreator = () => ({type: ADD_MESSAGE})
