@@ -1,15 +1,20 @@
 import styles from './Users.module.css'
+import * as axios from "axios";
+import userPhoto from '../../assets/images/ava.svg'
 
 const Users = (props) =>
 {
+
     if(props.users.length === 0 )
     {
-        props.setUsers([ {id: 1, photoUrl: 'https://www.maxpixel.net/static/photo/640/Avatar-Blank-Profile-Picture-Display-Pic-Mystery-Man-973460.jpg', followed: false, name: 'Dmitry K.', status: 'I am looking for a job right now...', location:{ country: 'Belarus', city: 'Minsk'} },
-            {id: 2, photoUrl: 'https://www.maxpixel.net/static/photo/640/Avatar-Blank-Profile-Picture-Display-Pic-Mystery-Man-973460.jpg', followed: true, name: 'Ivan D.', status: 'I am looking for a job right now...', location:{ country: 'Russia', city: 'Moscow'} },
-            {id: 3, photoUrl: 'https://www.maxpixel.net/static/photo/640/Avatar-Blank-Profile-Picture-Display-Pic-Mystery-Man-973460.jpg', followed: false, name: 'Sasha M.', status: 'I am looking for a job right now...', location:{ country: 'Russia', city: 'Saratov'} }
-        ])
-    }
 
+        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+
+            props.setUsers(response.data.items)
+        });
+
+
+    }
 
 
 
@@ -20,7 +25,7 @@ const Users = (props) =>
 
             <span>
                 <div>
-                    <img src={users.photoUrl} className={styles.userPhoto} alt='ava'/>
+                    <img src={users.photos.small != null ? users.photos.small : userPhoto } className={styles.userPhoto} alt='ava'/>
                 </div>
                 <div>
                     {users.followed ? <button onClick={ ()=>{props.unfollow(users.id)} }>unfollow</button> : <button onClick={ () => {props.follow(users.id)} }>follow</button> }
@@ -33,8 +38,8 @@ const Users = (props) =>
                     <div>{users.status}</div>
                 </span>
                 <span>
-                    <div>{users.location.country}</div>
-                    <div>{users.location.city}</div>
+                    <div>{'users.location.country'}</div>
+                    <div>{'users.location.city'}</div>
                 </span>
             </span>
 
