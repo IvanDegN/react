@@ -16,6 +16,7 @@ const NavBar = (props) =>
                 <li className={NavBarCssModule.item}><NavLink className={({isActive}) => isActive ? NavBarCssModule.active : NavBarCssModule.link} to='/messages'>Messages</NavLink></li>
                 <li className={NavBarCssModule.item}><NavLink className={({isActive}) => isActive ? NavBarCssModule.active : NavBarCssModule.link}  to='/news'>News</NavLink></li>
                 <li className={NavBarCssModule.item}><NavLink className={({isActive}) => isActive ? NavBarCssModule.active : NavBarCssModule.link} to='/music'>Music</NavLink></li>
+                <li className={NavBarCssModule.item}><NavLink className={({isActive}) => isActive ? NavBarCssModule.active : NavBarCssModule.link} to='/users'>Users</NavLink></li>
                 <br />
                 <br />
                 <li className={NavBarCssModule.item}><NavLink className={({isActive}) => isActive ? NavBarCssModule.active : NavBarCssModule.link} to='/settings'>Settings</NavLink></li>
