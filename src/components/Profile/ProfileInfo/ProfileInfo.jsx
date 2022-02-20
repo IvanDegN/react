@@ -16,6 +16,10 @@ const ProfileInfo = (props) =>
             </div>
             <div className={ProfileModuleCss.avatar}>
                 <img src={props.profile.photos.large} alt='ava' />
+                <div>Имя: {props.profile.fullName}</div>
+                <div>Обо мне: {props.profile.aboutMe}</div>
+                <div>Мой вк: {props.profile.contacts.vk}</div>
+                <div>Ищу ли я работу: {props.profile.lookingForAJobDescription}</div>
                 ava
             </div>
         </div>
