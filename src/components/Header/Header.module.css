@@ -10,3 +10,13 @@
 {
     width: 40px;
 }
+
+.headerBlock
+{
+    float: right;
+}
+
+.headerBlock a
+{
+    color: white;
+}
