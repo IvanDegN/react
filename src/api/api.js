@@ -28,14 +28,14 @@ export const usersAPI =
             return instance.get('auth/me').then(response => response.data);
         },
 
-        unFollow(users)
+        unfollow(userId)
         {
-            return instance.delete(`follow/${users.id}`).then(response => response.data);
+            return instance.delete(`follow/${userId}`).then(response => response.data);
         },
 
-        follow(users)
+        follow(userId)
         {
-            return instance.post(`follow/${users.id}`, {}).then(response => response.data);
+            return instance.post(`follow/${userId}`, {}).then(response => response.data);
         }
 
     }
