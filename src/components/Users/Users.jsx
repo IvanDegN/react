@@ -6,6 +6,7 @@ import {usersAPI} from "../../api/api";
 
 
 
+
 const Users = (props) =>
 {
 
@@ -30,28 +31,31 @@ const Users = (props) =>
                     </NavLink>
                 </div>
                 <div>
-                    {users.followed ? <button onClick={ ()=>
+                    {users.followed ? <button disabled={props.followingInProgress.some(id => id === users.id)} onClick={ ()=>
                         {
-
+                            props.toggleFollowingProgress(true, users.id);
                             usersAPI.unFollow(users)
                             .then(data => {
                                 if (data.resultCode === 0)
                                 {
                                     props.unfollow(users.id)
                                 }
+                                props.toggleFollowingProgress(false, users.id);
                             })
 
                     }
 
 
                     }>unfollow</button> :
-                        <button onClick={() => {
+                        <button disabled={props.followingInProgress.some(id => id === users.id)} onClick={() => {
+                            props.toggleFollowingProgress(true, users.id);
                             usersAPI.follow(users)
                                 .then(data => {
                                 if (data.resultCode === 0)
                                 {
                                     props.follow(users.id)
                                 }
+                                    props.toggleFollowingProgress(false, users.id);
                             })
 
                         }
