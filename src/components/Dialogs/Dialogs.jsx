@@ -2,6 +2,7 @@ import DialogsModulesCss from './Dialogs.module.css'
 import React from "react";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import {Navigate} from "react-router-dom";
 
 
 
@@ -28,6 +29,8 @@ const Dialogs = (props) =>
         props.ChangeMessage(message);
     }
 
+    if(!props.isAuth) return <Navigate to={'/login'}/>
+
     return (
             <div className={DialogsModulesCss.dialogs}>
                 <div className={DialogsModulesCss.dialogsItem}>
@@ -41,5 +44,6 @@ const Dialogs = (props) =>
             </div>
     );
 }
+
 
 export  default  Dialogs;
