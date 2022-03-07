@@ -16,13 +16,16 @@ class ProfileContainer extends React.Component
 {
     componentDidMount()
     {
-
-        let userId = this.props.match.params.userId;
-        if (!userId)
+        if (this.props.match && this.props.match.params.userId)
         {
-            userId = 2;
+            let userId = this.props.match.params.userId;
+            if(!userId)
+            {
+                userId = 2;
+            }
+            this.props.getUserProfile(userId);
         }
-        this.props.getUserProfile(userId)
+
     }
 
     render()

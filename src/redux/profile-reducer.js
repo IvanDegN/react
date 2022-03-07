@@ -44,10 +44,10 @@ export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_
 
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 
-export const getUserProfile = (userId) => (dispathc) =>
+export const getUserProfile = (userId) => (dispatch) =>
 {
     usersAPI.getProfile(userId).then(data => {
-        dispathc(setUserProfile(data));
+        dispatch(setUserProfile(data));
     });
 }
 
