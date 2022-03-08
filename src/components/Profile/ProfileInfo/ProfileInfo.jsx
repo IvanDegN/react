@@ -22,7 +22,7 @@ const ProfileInfo = (props) =>
                 {/*<div>Мой вк: {props.profile.contacts.vk}</div>*/}
                 {/*<div>Ищу ли я работу: {props.profile.lookingForAJobDescription}</div>*/}
                 {/*ava*/}
-                <ProfileStatus status={'Hello'}/>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>
 
